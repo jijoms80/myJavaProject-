@@ -19,7 +19,7 @@ public class Banquet {
 		return baseCost;
 	}
 
-	// Calculate the tax
+	// Calculate the base tax
 	public double calculateTax(double baseCost, double percent) {
 		double tax = baseCost * percent / 100;
 		return tax;
