@@ -2,7 +2,7 @@ package Abstract;
 
 public interface SBIInhouseRules {
 	
-		String bankfullNames = "StateBankOfIndia";
+		String bankNames = "StateBankOfIndia";
 
 		void newCustomerDeposit();
 	}

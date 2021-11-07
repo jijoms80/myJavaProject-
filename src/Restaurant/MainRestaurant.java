@@ -34,7 +34,26 @@ public class MainRestaurant {
 
 		System.out.println("Tip  :" + calculateClass.tipAmount);
 
-		calculateClass.finalFoodCost(couponfoodcost);
+		 double payAmount=calculateClass.finalFoodCost(couponfoodcost);
+		 
+		 System.out.println("******Payment*******");
+		System.out.println("SELECT THE PAYMENT METHOD");
+		System.out.println("1.Via  Cash");
+		System.out.println("2.Via Card");
+		int pay=scan.nextInt();
+		PaymentClass paymentClass= new PaymentClass();
+		paymentClass.getValue(pay, payAmount);
+		if (pay==1) {
+		paymentClass.paymentViaCash();
+		}
+		else if(pay==2)
+		{
+		paymentClass.paymentViaCard();
+				
+		}
+		else {
+			System.out.println("Wrong payment selection");
+		}
 		scan.close();
 
 	}

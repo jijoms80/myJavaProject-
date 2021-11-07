@@ -28,7 +28,7 @@ public class ArrayListMethods {
 			
 		}
 		
-		for
+		
 		rollNo.clear();
 		
 		for(int i=0;i<rollNo.size();i++) {

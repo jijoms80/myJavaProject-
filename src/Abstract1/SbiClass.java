@@ -14,7 +14,7 @@ public double calculateInterest() {
 	interst=balance*.03;
 	return interst;
 }
-
+//commit
 @Override
 public double calculateBalance() {
 	// TODO Auto-generated method stub

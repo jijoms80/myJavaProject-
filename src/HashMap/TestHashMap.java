@@ -8,6 +8,7 @@ public class TestHashMap {
 		// TODO Auto-generated method stub
 		HashMap<Integer,Integer> hm= new HashMap<>();
 		HashMap<Integer, String> hm1= new HashMap<>();
+		HashMap<String, String> hm2= new HashMap<>();
 		
 		hm1.put(56, "jijo");
 		hm1.put(29, "tinu"	);
@@ -43,6 +44,9 @@ public class TestHashMap {
 			System.out.println(accountNo);
 		}
 
+		
+		
+		
 	}
 
 }

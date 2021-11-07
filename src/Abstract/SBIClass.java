@@ -57,18 +57,21 @@ public class SBIClass extends RBIClass implements GovtRules, SBIInhouseRules {
 		// TODO Auto-generated method stub
 		
 	}
-	@Override
-	public double calculateIntrest() {
-		// TODO Auto-generated method stub
-		interst=balance*.014;
-		return interst;
-	}
+	
 
 	@Override
 	public double calculateInterest() {
 		// TODO Auto-generated method stub
 		interst=balance*.014;
 		return interst;
+	}
+
+	@Override
+	public double calculateIntrest() {
+		// TODO Auto-generated method stub
+		interst=balance*.014;
+		return interst;
+		
 	}
 
 	
