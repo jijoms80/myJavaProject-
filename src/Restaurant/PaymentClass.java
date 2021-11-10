@@ -37,16 +37,23 @@ public class PaymentClass extends MainRestaurant implements Payment {
 
 	@Override
 	public void paymentViaCard() {
-		HashMap<Integer, Integer> map = new HashMap<Integer, Integer>();
-		map.put(10, 4556);
-		map.put(20, 7835);
-		map.put(30, 7889);
-		map.put(40, 2536);
+		HashMap<String, Integer> hMap = new HashMap<String, Integer>();
+		hMap.put("1122334455667788", 1111);
+		hMap.put("8877665544332211", 2222);
+		hMap.put("1234567899876543", 3333);
+		hMap.put("1112223334445556", 4444);
+		hMap.put("1111222233334444", 5555);
+		hMap.put("1234567891594876", 6666);
+		hMap.put("1546897125897549", 7777);
+		hMap.put("5465487898798707", 1234);
+		hMap.put("4569787987122129", 2901);
+		hMap.put("9659851236597864", 2014);
+		
 
-		System.out.println("Please enther last 4 digits of the card");
+		System.out.println("Please enther  16 digits of the card");
 		cardNo = input.nextInt();
 
-		if (map.containsValue(cardNo)) {
+		if (hMap.containsValue(cardNo)) {
 			mapValue = cardNo;
 		} else {
 			mapValue = 0;
