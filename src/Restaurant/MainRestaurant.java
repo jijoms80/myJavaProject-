@@ -44,7 +44,9 @@ public class MainRestaurant {
 		PaymentClass paymentClass= new PaymentClass();
 		paymentClass.getValue(pay, payAmount);
 		if (pay==1) {
+			
 		paymentClass.paymentViaCash();
+		
 		}
 		else if(pay==2)
 		{
@@ -57,5 +59,7 @@ public class MainRestaurant {
 		scan.close();
 
 	}
+
+	
 
 }

@@ -7,10 +7,10 @@ public class PaymentClass extends MainRestaurant implements Payment {
 	int option;
 	double payAmount;
 	double paidAmount;
-	int pin = 1234;
+	int pin;
 	int enterPin;
-	int mapValue;
-	int cardNo;
+	boolean mapValue;
+	String cardNo;
 
 	Scanner input = new Scanner(System.in);
 
@@ -35,9 +35,14 @@ public class PaymentClass extends MainRestaurant implements Payment {
 
 	}
 
+	public void cardDetails() {
+
+	}
+
 	@Override
 	public void paymentViaCard() {
 		HashMap<String, Integer> hMap = new HashMap<String, Integer>();
+
 		hMap.put("1122334455667788", 1111);
 		hMap.put("8877665544332211", 2222);
 		hMap.put("1234567899876543", 3333);
@@ -48,23 +53,26 @@ public class PaymentClass extends MainRestaurant implements Payment {
 		hMap.put("5465487898798707", 1234);
 		hMap.put("4569787987122129", 2901);
 		hMap.put("9659851236597864", 2014);
-		
 
-		System.out.println("Please enther  16 digits of the card");
-		cardNo = input.nextInt();
+		System.out.println("Please enter  16 digits of the card");
+		cardNo = input.next();
+		mapValue = hMap.containsKey(cardNo);
+		if (mapValue == true) {
+			pin = hMap.get(cardNo);
+			System.out.println("Enter the PIN");
+			enterPin = input.nextInt();
+			if (pin == enterPin) {
+				// paidAmount = payAmount - payAmount;
+				System.out.println("Thanks for purchase");
+			} else {
+				System.out.println("Wrong PIN Transaction declined");
+			}
 
-		if (hMap.containsValue(cardNo)) {
-			mapValue = cardNo;
-		} else {
-			mapValue = 0;
 		}
-		System.out.println("Enter the PIN");
-		enterPin = input.nextInt();
-		if (pin == enterPin && cardNo == mapValue) {
-			paidAmount = payAmount - payAmount;
-			System.out.println("Total Food Cost is " + paidAmount);
-		} else {
-			System.out.println("Wrong Card No/PIN Transaction declined");
+
+		else {
+			System.out.println("Invalid Card Number");
 		}
+
 	}
 }

@@ -36,6 +36,7 @@ public class Bookmain {
 		
 				objbook1.setTitle(scan.next());
 		System.out.println("New title is :"+objbook1.title);
+		scan.close();
 	}	
 				
 	
