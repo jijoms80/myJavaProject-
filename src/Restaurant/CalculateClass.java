@@ -12,10 +12,6 @@ public class CalculateClass {
 	double finalCost;
 	double costOfFood;
 
-	public CalculateClass() {
-
-	}
-
 	public CalculateClass(double foodcost, double distance) {
 		this.foodCost = foodcost;
 		this.distance = distance;
@@ -38,13 +34,12 @@ public class CalculateClass {
 			additional_distance = distance - 5;
 			additional_deliveryCost = additional_distance * 2;
 			addtionalFoodcost = foodCost * .02;
-	}
+		}
 
 		if (additional_deliveryCost > addtionalFoodcost) {
 			additional_deliveryCost = addtionalFoodcost;
-		}
-		else if (additional_deliveryCost < foodCost) {
-			additional_deliveryCost = additional_deliveryCost;
+		} else if (additional_deliveryCost < foodCost) {
+			additional_deliveryCost= additional_deliveryCost;
 		}
 		return additional_deliveryCost;
 	}
@@ -58,15 +53,13 @@ public class CalculateClass {
 	public double tipCalculation() {
 		if (foodCost > 40) {
 			tipAmount = foodCost * .02;
-			//System.out.println("The tip amount is :"+tipAmount);
 		}
 		return tipAmount;
 	}
 
 	public double finalFoodCost(double beforeTax) {
-		finalCost = beforeTax + tax;
+		finalCost = beforeTax + taxCalculation(beforeTax);
 		System.out.println("The Final Food Cost :" + finalCost);
-
 		return finalCost;
 	}
 
@@ -77,7 +70,7 @@ public class CalculateClass {
 	}
 
 	public void calculateFoodCost() {
-		if (distance > 20 && foodCost>100 ){
+		if (distance > 20 && foodCost > 100) {
 			foodCost = foodCost + additionalCost() + tipCalculation();
 
 		} else if (foodCost > 100 && distance <= 20) {
@@ -90,7 +83,7 @@ public class CalculateClass {
 
 		else if (foodCost >= 50 && foodCost <= 100 && distance >= 10) {
 			deliveryCost = foodCost * .05;
-			foodCost = foodCost +deliveryCost+ additionalCost() + tipCalculation();
+			foodCost = foodCost + deliveryCost + additionalCost() + tipCalculation();
 		}
 
 		else if (foodCost < 50 && distance <= 5) {
@@ -98,7 +91,7 @@ public class CalculateClass {
 			foodCost = foodCost + deliveryCost + tipCalculation();
 		} else if (foodCost < 50 && distance > 5) {
 			deliveryCost = foodCost * .1;
-			foodCost = foodCost +deliveryCost+ additionalCost() + tipCalculation();
+			foodCost = foodCost + deliveryCost + additionalCost() + tipCalculation();
 		}
 
 	}

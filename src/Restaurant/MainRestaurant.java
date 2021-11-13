@@ -20,46 +20,38 @@ public class MainRestaurant {
 
 		CalculateClass calculateClass = new CalculateClass(foodCost, distance);
 		CouponClass couponClass = new CouponClass();
-		
-        double baseCost=calculateClass.costOfFood();
+
+		double baseCost = calculateClass.costOfFood();
 		int coupon = scan.nextInt();
-		
+
 		double couponfoodcost = couponClass.couponApply(coupon, baseCost, calculateClass.deliveryCost);
-		System.out.println("After coupon applay " + couponfoodcost);
-			
+		System.out.println("After coupon applied " + couponfoodcost);
 		System.out.println("Delivery cost:" + calculateClass.deliveryCost);
-		//System.out.println("Additional delivery cost" + calculateClass.additional_deliveryCost);
-
-		calculateClass.taxCalculation(couponfoodcost);
-
 		System.out.println("Tip  :" + calculateClass.tipAmount);
+		double payAmount = calculateClass.finalFoodCost(couponfoodcost);
 
-		 double payAmount=calculateClass.finalFoodCost(couponfoodcost);
-		 
-		 System.out.println("******Payment*******");
+		System.out.println("******PAYMENT*******");
 		System.out.println("SELECT THE PAYMENT METHOD");
 		System.out.println("1.Via  Cash");
 		System.out.println("2.Via Card");
-		int pay=scan.nextInt();
-		PaymentClass paymentClass= new PaymentClass();
-		paymentClass.getValue(pay, payAmount);
-		if (pay==1) {
-			
-		paymentClass.paymentViaCash();
-		
-		}
-		else if(pay==2)
-		{
-		paymentClass.paymentViaCard();
-				
-		}
-		else {
+
+		int pay = scan.nextInt();
+		PaymentClass paymentClass = new PaymentClass();
+		if (pay == 1) {
+			System.out.println("Enter the amount recived");
+			double paidAmount = scan.nextDouble();
+			paymentClass.paymentViaCash(payAmount, paidAmount);
+		} else if (pay == 2) {
+			System.out.println("Please enter  16 digits of the card");
+			String cardNo = scan.next();
+			System.out.println("Please enter 4 digit PIN  ");
+			int pin = scan.nextInt();
+			paymentClass.paymentViaCard(cardNo, pin);
+		} else {
 			System.out.println("Wrong payment selection");
 		}
 		scan.close();
 
 	}
-
-	
 
 }

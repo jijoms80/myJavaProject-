@@ -1,13 +1,11 @@
 package Delivery;
 
-import Restaurant.CalculateClass;
 
-public class CouponClass  extends CalculateClass{
+
+public class CouponClass {
 	
 	 boolean couponApply=true;
- public CouponClass() {
-		super();
-	}
+ 
 
 
 
